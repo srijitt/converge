@@ -43,7 +43,7 @@ const CountDown = () => {
     // If you adjust it you should also need to
     // adjust the Endtime formula we are about
     // to code next
-    setTimer("Apr 6, 2023 16:30:00");
+    setTimer("Jan 26, 2024 10:00:00");
 
     // If you try to remove this line the
     // updating of timer Variable will be
@@ -55,7 +55,7 @@ const CountDown = () => {
     Ref.current = id;
   };
   const getDeadTime = () => {
-    let deadline = new Date("Apr 6, 2023 16:30:00");
+    let deadline = new Date("Jan 26, 2024 10:00:00");
 
     // This is where you need to adjust if
     // you entend to add more time

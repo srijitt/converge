@@ -9,6 +9,7 @@ import "animate.css";
 import TrackVisibility from "react-on-screen";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
+import "../styles/projects.css";
 
 const Projects = () => {
   // const projects = [
@@ -46,25 +47,22 @@ const Projects = () => {
                     isVisible ? "animate__animated animate__fadeIn" : ""
                   }
                 >
-                  <h2>Schedule</h2>
+                  <h2>Coming up</h2>
                   {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p> */}
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Nav
                       variant="pills"
-                      className="nav-pills mb-5 justify-content-center align-items-center"
+                      className="nav-pills mb-5 w-full justify-content-center align-items-center"
                       id="pills-tab"
                     >
-                      <Nav.Item>
-                        <Nav.Link eventKey="first">6th April</Nav.Link>
+                      <Nav.Item className="dates w-full">
+                        <Nav.Link eventKey="first" className="fs-8">26th Jan</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="second">7th April</Nav.Link>
+                        <Nav.Link eventKey="second" className="fs-8">27th Jan</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="third">8th April</Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item>
-                        <Nav.Link eventKey="fourth">9th April</Nav.Link>
+                        <Nav.Link eventKey="fourth" className="fs-8">28th Jan</Nav.Link>
                       </Nav.Item>
                     </Nav>
                     <Tab.Content
@@ -177,7 +175,7 @@ const Projects = () => {
                           </p>
                         </div>
                       </Tab.Pane>
-                      <Tab.Pane eventKey="third">
+                      <Tab.Pane eventKey="fourth">
                         <div style={{ top: "10%" }}>
                           <p>
                             <FontAwesomeIcon icon={faClock} />{" "}
@@ -246,67 +244,6 @@ const Projects = () => {
                             <span style={{ paddingLeft: "40px" }}>
                               Seminar - Building a personal brand through social
                               media ~ Indrajit Lahiri
-                            </span>
-                          </p>
-                        </div>
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="fourth">
-                        <div style={{ top: "10%" }}>
-                          <p>
-                            <FontAwesomeIcon icon={faClock} />{" "}
-                            <span style={{ color: "white" }}>
-                              10:00 AM - 10:15 AM
-                            </span>
-                            <span
-                              style={{ paddingLeft: "20px", fontStyle: "bold" }}
-                            >
-                              Day briefing
-                            </span>
-                          </p>
-
-                          <p>
-                            <FontAwesomeIcon icon={faClock} />{" "}
-                            <span style={{ color: "white" }}>
-                              10:15 AM - 11:45 AM
-                            </span>
-                            <span style={{ paddingLeft: "20px" }}>
-                              Competition - Blind coding
-                            </span>
-                          </p>
-                          <p>
-                            <FontAwesomeIcon icon={faClock} />{" "}
-                            <span style={{ color: "white" }}>
-                              12:00 AM - 1:00 PM
-                            </span>
-                            <span style={{ paddingLeft: "20px" }}>
-                              Seminar - Future of the Internet ~ Subodh Gajare
-                            </span>
-                          </p>
-                          <p>
-                            <FontAwesomeIcon icon={faClock} />{" "}
-                            <span style={{ color: "white" }}>
-                              1:00 PM - 2:00 PM
-                            </span>
-                            <span style={{ paddingLeft: "40px" }}>
-                              Lunch break
-                            </span>
-                          </p>
-                          <p>
-                            <FontAwesomeIcon icon={faClock} />{" "}
-                            <span style={{ color: "white" }}>
-                              2:00 PM - 3:00 PM
-                            </span>
-                            <span style={{ paddingLeft: "40px" }}>
-                              Valedictory Session (Auction & Prize Distribution)
-                            </span>
-                          </p>
-                          <p>
-                            <FontAwesomeIcon icon={faClock} />{" "}
-                            <span style={{ color: "white" }}>
-                              3:30 PM - 6:00 PM
-                            </span>
-                            <span style={{ paddingLeft: "40px" }}>
-                              Cultural Program
                             </span>
                           </p>
                         </div>

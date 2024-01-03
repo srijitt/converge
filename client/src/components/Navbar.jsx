@@ -28,9 +28,9 @@ const NavbarNew = () => {
 
   return (
       <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
-        <Container>
-          <Navbar.Brand href="/home">
-            <img src={logo} alt="Logo" />
+        <Container className="md:mt-12">
+          <Navbar.Brand href="/home" className="flex items-center justify-center">
+            <img src={logo} alt="Logo" className=""/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>

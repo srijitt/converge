@@ -13,9 +13,9 @@ const Banner = () => {
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
   const toRotate = [
-    "TowardsBetterThings",
-    "TowardsBetterThings",
-    "TowardsBetterThings",
+    "LetsConverge",
+    "LetsConverge",
+    "LetsConverge",
   ];
   const period = 2000;
 
@@ -69,17 +69,17 @@ const Banner = () => {
                   }
                 >
                   {/* <span className="tagline">About</span> */}
-                  <h1>
-                    {`#`}{" "}
+                  <h1 className="text-center mg:text-left fs-1">
+                    {`#`}{""}
                     <span
                       className="txt-rotate"
                       dataPeriod="1000"
-                      data-rotate='[ "TowardsBetterThings", "TowardsBetterThings", "TowardsBetterThings" ]'
+                      data-rotate='[ "LetsConverge", "LetsConverge", "LetsConverge" ]'
                     >
                       <span className="wrap">{text}</span>
                     </span>
                   </h1>
-                  <p id="main-text">
+                  <p id="main-text text-center">
                     We are back with the third edition of ELEVATE'23 - the
                     annual event of IEEE IEM Student Branch. With the amount of
                     global response we got in the previous events, we can assure

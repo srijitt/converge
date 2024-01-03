@@ -37,44 +37,45 @@ export const Skills = () => {
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <div className="skill-bx wow zoomIn">
+            <div className="skill-bx wow zoomIn flex flex-col items-center">
               <h2>Guests</h2>
               {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p> */}
               <div
                 // responsive={responsive}
                 className="owl-carousel owl-theme skill-slider row"
               >
-                <h3 className="h3 text-left">
+                <h3 className="h3 text-left m-4">
                   <FontAwesomeIcon icon={faSquare} /> Inauguration
                 </h3>
-                <div className="item col-md-3">
-                  <img src={satyajit} alt="guest" />
-                  <h4 className="h5">Dr. Satyajit Chakrabarti</h4>
-                  <h5>President, IEM UEM Group</h5>
-                </div>
-                <div className="item col-md-3">
-                  <img src={alex} alt="guest" />
-                  <h4 className="h5">Dr. Satyajit Chakrabarti</h4>
-                  <h5>Director, IEM UEM Group</h5>
-                </div>
-
-                <div className="item col-md-3">
-                  <img src={thomas} alt="guest" />
-                  <h4 className="h5">Dr. Thomas Coughling</h4>
-                  <h5>President Elect, IEEE</h5>
-                </div>
-                <div className="item col-md-3">
-                  <img src={md} alt="guest" />
-                  <h4 className="h5">Dr. Md. Rawidean Md. Kassim</h4>
-                  <h5>
-                    IEEE Senior Member <br /> Chair (2002-13) IEEE CS <br />
-                    Malaysia Section
-                  </h5>
+                <div className="mt-4 flex flex-col space-y-8 md:flex-row md:space-y-0">
+                  <div className="item col-md-3">
+                    <img src={satyajit} alt="guest" />
+                    <h4 className="h5">Dr. Satyajit Chakrabarti</h4>
+                    <h5>President, IEM UEM Group</h5>
+                  </div>
+                  <div className="item col-md-3">
+                    <img src={alex} alt="guest" />
+                    <h4 className="h5">Dr. Satyajit Chakrabarti</h4>
+                    <h5>Director, IEM UEM Group</h5>
+                  </div>
+                  <div className="item col-md-3">
+                    <img src={thomas} alt="guest" />
+                    <h4 className="h5">Dr. Thomas Coughling</h4>
+                    <h5>President Elect, IEEE</h5>
+                  </div>
+                  <div className="item col-md-3">
+                    <img src={md} alt="guest" />
+                    <h4 className="h5">Dr. Md. Rawidean Md. Kassim</h4>
+                    <h5>
+                      IEEE Senior Member <br /> Chair (2002-13) IEEE CS <br />
+                      Malaysia Section
+                    </h5>
+                  </div>
                 </div>
               </div>
               <div
                 // responsive={responsive}
-                className="owl-carousel owl-theme skill-slider row flex justify-content-center"
+                className="owl-carousel owl-theme skill-slider row flex justify-content-center space-y-8 md:space-y-0"
               >
                 <div className="item col-md-3">
                   <img src={nita} alt="guest" />
@@ -97,9 +98,10 @@ export const Skills = () => {
                 // responsive={responsive}
                 className="owl-carousel owl-theme skill-slider row"
               >
-                <h3 className="h3 text-left">
+                <h3 className="h3 text-left m-4">
                   <FontAwesomeIcon icon={faSquare} /> Seminar
                 </h3>
+                <div className="mt-4 flex flex-col md:flex-row space-y-8 md:space-y-0">
                 <div className="item col-md-3">
                   <img src={foodka} alt="guest" />
                   <h4 className="h5">Indrajit Lahiri</h4>
@@ -121,14 +123,16 @@ export const Skills = () => {
                   <h5>Engineering Specialist, ZS Associates</h5>
                   <h5>Chair, Students & YP, IEEE CS MGAB</h5>
                 </div>
+                </div>
               </div>
               <div
                 // responsive={responsive}
                 className="owl-carousel owl-theme skill-slider row"
               >
-                <h3 className="h3 text-left">
+                <h3 className="h3 text-left m-4">
                   <FontAwesomeIcon icon={faSquare} /> Panel Discussion
                 </h3>
+                <div className="mt-4 flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-5">
                 <div className="item col-md-3">
                   <img src={skp} alt="guest" />
                   <h4 className="h5">Susanta Kumar Parui</h4>
@@ -152,11 +156,13 @@ export const Skills = () => {
                     Distinguished Chief Scientist, Embedded Systems, TCS R&D
                   </h5>
                 </div>
+                </div>
               </div>
               <div
                 // responsive={responsive}
-                className="owl-carousel owl-theme skill-slider row flex justify-content-center"
+                className="owl-carousel owl-theme skill-slider row flex justify-content-center items-center mt-4 space-y-8 md:space-y-0 md:space-x-5"
               >
+
                 <div className="item col-md-3">
                   <img src={dbd} alt="guest" />
                   <h4 className="h5">Deeptendu Bikash Dhar</h4>
