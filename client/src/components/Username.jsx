@@ -36,7 +36,7 @@ export default function Username() {
           {/* <div className={styles.glass}> */}
           <div className="form-bx">
             <div className="title flex flex-col items-center">
-              <h4 className="text-5xl font-bold">Let's Elevate</h4>
+              <h4 className="text-5xl font-bold">Let's Converge</h4>
             </div>
 
             <form className="py-1 " onSubmit={formik.handleSubmit}>

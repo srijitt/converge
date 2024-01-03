@@ -62,7 +62,7 @@ const Projects = () => {
                         <Nav.Link eventKey="second" className="fs-8">27th Jan</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="fourth" className="fs-8">28th Jan</Nav.Link>
+                        <Nav.Link eventKey="third" className="fs-8">28th Jan</Nav.Link>
                       </Nav.Item>
                     </Nav>
                     <Tab.Content
@@ -175,7 +175,7 @@ const Projects = () => {
                           </p>
                         </div>
                       </Tab.Pane>
-                      <Tab.Pane eventKey="fourth">
+                      <Tab.Pane eventKey="third">
                         <div style={{ top: "10%" }}>
                           <p>
                             <FontAwesomeIcon icon={faClock} />{" "}

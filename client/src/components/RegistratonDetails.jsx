@@ -12,7 +12,7 @@ const RegistratonDetails = () => {
             <span></span>
             <span></span>
             <span></span>
-            Register Now!
+            <a href="https://forms.gle/ewpruo4Wpos8E6Ea9" target="_blank">Register Now!</a>
           </NavLink>
         </div>
       </div>

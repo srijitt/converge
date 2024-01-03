@@ -29,15 +29,15 @@ const NavbarNew = () => {
   return (
     // <Router>
       <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
-        <Container className="lg:mt-12">
-          <Navbar.Brand href="/home" >
+        <Container className="lg:mt-12 flex items-center justify-center">
+          <Navbar.Brand href="/home" className={scrolled ? "lg:mb-8" : ""}>
             <img src={logo} alt="Logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
+            <Nav className="ms-auto flex flex-col items-center">
               <Nav.Link
                 href="#home"
                 className={
@@ -57,6 +57,7 @@ const NavbarNew = () => {
               >
                 About
               </Nav.Link>
+
               <Nav.Link
                 href="#schedule"
                 className={
@@ -68,6 +69,7 @@ const NavbarNew = () => {
               >
                 Schedule
               </Nav.Link>
+
               <Nav.Link
                 href="#guests"
                 className={
@@ -77,6 +79,7 @@ const NavbarNew = () => {
               >
                 Guests
               </Nav.Link>
+
               <Nav.Link
                 href="/"
                 target="_blank"

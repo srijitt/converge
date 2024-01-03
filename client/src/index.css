@@ -114,19 +114,23 @@ nav.navbar {
 }
 
 nav.navbar.scrolled {
-    padding: 0px 0;
-    background-color: #0b101a;
+    position: fixed;
+    padding: 10px 0 10px 0;
+    background-color: #340000;
+    height: 12vh;
 }
 
 nav.navbar a.navbar-brand {
     width: 20%;
+    cursor: pointer;
+
 }
 
 nav.navbar .navbar-nav .nav-link.navbar-link {
     font-weight: 400;
     color: #fff !important;
     letter-spacing: 0.8px;
-    padding: 0 25px;
+    padding: 0 25px 35px;
     font-size: 18px;
     opacity: 0.75;
 }
@@ -348,15 +352,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     text-transform: uppercase;
     letter-spacing: 4px;
     font: 700 30px 'Centra', sans-serif !important;
-    /* font-family: 'Centra', sans-serif !important; */
+    font-family: 'Centra', sans-serif !important; 
     overflow: hidden;
     width: 40%;
     margin: auto;
 }
-#btn-ani:-webkit-any-link{
-    cursor: not-allowed;
-}
-
 @media only screen and (max-width: 600px) {
     #btn-ani {
         width: 80%;
@@ -370,7 +370,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     width: 100%;
     height: 3px;
     /* background: linear-gradient(to right, #171618, #3bff3b); */
-    background: linear-gradient(to right, #171618, #00ffcc);
+    background: linear-gradient(to right, rgb(255, 57, 57), #e9f9f6);
     animation: animate1 2s linear infinite;
 }
 
@@ -390,7 +390,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     right: 0;
     height: 100%;
     width: 3px;
-    background: linear-gradient(to bottom, #171618, #00ffcc);
+    background: linear-gradient(to right, rgb(255, 57, 57), #e9f9f6);
     animation: animate2 2s linear infinite;
     animation-delay: 1s;
 }
@@ -411,7 +411,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     right: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(to left, #171618, #00ffcc);
+    background: linear-gradient(to right, rgb(255, 57, 57), #e9f9f6);
     animation: animate3 2s linear infinite;
 }
 
@@ -431,7 +431,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     left: 0;
     height: 100%;
     width: 3px;
-    background: linear-gradient(to top, #171618, #00ffcc);
+    background: linear-gradient(to right, rgb(255, 57, 57), #e9f9f6);
     animation: animate4 2s linear infinite;
     animation-delay: 1s;
 }
@@ -612,7 +612,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Projects Css ************/
 .project-bx {
-    background: #0b101a;
+    background: #141000;
     border-radius: 64px;
     text-align: center;
     padding: 60px 50px;
@@ -633,6 +633,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     font-size: 45px;
     font-weight: 700;
     text-align: center;
+    margin-bottom: 24px;
 }
 
 .project p {
@@ -661,7 +662,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .project .nav.nav-pills .nav-item {
-    width: 25%;
+    width: 30%;
 }
 
 .project .nav.nav-pills .nav-link {
@@ -685,10 +686,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     width: 0;
     height: 100%;
     /* background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%); */
-    background: linear-gradient(90.21deg, #094643 -5.91%, #0b101a 111.58%);
+    background: linear-gradient(90.21deg, #cdb900 -5.91%, #54bd23 111.58%);
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: -2;
     transition: 0.3s ease-in-out;
 }
 
@@ -710,15 +711,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.nav-link#projects-tabs-tab-third {
-    /* border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 0 55px 55px 0; */
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
-}
 
-.nav-link#projects-tabs-tab-fourth {
+.nav-link#projects-tabs-tab-third {
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 0 55px 55px 0;
 }
@@ -840,7 +834,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     width: 60%;
     margin: 0 auto 15px auto;
     border-radius: 50%;
-    border: 2px solid #00ffcc;
+    border: 2px solid #ff0000;
     transition: all 0.5s;
 }
 
@@ -855,7 +849,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .skill-slider .item img:hover {
-    box-shadow: 0px 0px 20px 1px #00ffcc;
+    box-shadow: 0px 0px 20px 1px #ffffff;
     transform: scale(1.1);
 }
 
@@ -887,23 +881,25 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     /* background: linear-gradient(90.21deg, #094643 -5.91%, #0b101a 111.58%); */
     background-color: #00ffcc;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    font-size: 20px;
+    font-size: 30px;
     margin-bottom: 16px;
     display: inline-block;
 }
 
 .banner h1 {
-    font-size: 65px;
+    font-size: 55px;
     font-weight: 700;
     letter-spacing: 0.8px;
     line-height: 1;
     margin-bottom: 20px;
     display: block;
+    padding-left: 10px;
 }
 
 @media only screen and (max-width: 600px) {
     .banner h1 {
-        font-size: 25px;
+        font-size: 40px;
+        margin-bottom: 50px;
     }
 }
 
@@ -912,7 +908,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     font-size: 20px;
     letter-spacing: 0.8px;
     line-height: 1.5em;
-    width: 96%;
+    width: 100%;
+    padding-left: 20px;
+    text-align: justify;
+}
+
+@media only screen and (max-width: 600px) {
+    .banner p {
+        font-size: 20px;
+        padding: 0 30px 0 30px;
+    }
 }
 
 .banner button {
@@ -998,8 +1003,17 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .counter {
-    /* color:#00ffcc; */
+    color:#f2ff92;
+    padding-bottom: 20px;
+    width: 100%;
+    text-align: center;
 }
+
+.counter-parent {
+    padding: 20px;
+    width: 100%;
+}
+
 
 .note {
     color: #B8B8B8;

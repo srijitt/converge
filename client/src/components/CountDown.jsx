@@ -69,9 +69,8 @@ const CountDown = () => {
     clearTimer(getDeadTime());
   };
   return (
-    <div >
+    <div className="counter-parent">
       <h2 className="display-5 mt-5 counter fw-bold ">{timer}</h2>
-      <p> To Go....</p>
       {/* <button onClick={onClickReset}>Reset</button> */}
     </div>
   );
