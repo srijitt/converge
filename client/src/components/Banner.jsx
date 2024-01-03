@@ -73,7 +73,7 @@ const Banner = () => {
                     {`#`}{""}
                     <span
                       className="txt-rotate"
-                      dataPeriod="1000"
+                      dataperiod="1000"
                       data-rotate='[ "LetsConverge", "LetsConverge", "LetsConverge" ]'
                     >
                       <span className="wrap">{text}</span>

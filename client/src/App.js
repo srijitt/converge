@@ -22,11 +22,11 @@ import { AuthorizeUser, ProtectRoute } from './middleware/auth'
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Username></Username>
+        element: <Home></Home>
     },
     {
         path: '/register',
-        element: <Register></Register>
+        element: <Username></Username>
     },
     {
         path: '/password',
@@ -43,10 +43,6 @@ const router = createBrowserRouter([
     {
         path: '/reset',
         element: <Reset></Reset>
-    },
-    {
-        path: '/home',
-        element: <Home></Home>
     },
     {
         path: '/Ob1qe2t10q27520wGcv9MI7d1Moju5RG',

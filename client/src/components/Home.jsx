@@ -7,7 +7,7 @@ import { Skills } from "./Skills";
 import { Footer } from "./Footer";
 import "../styles/home.css";
 // import logo from '../images/logo.png'
-import vdo from "../assets/videos/elevate2023.mp4";
+import vdo from "../assets/videos/converge 2024.mp4";
 import Contact from "./Contact";
 import Colaborators from "./Colaborators";
 
@@ -33,7 +33,7 @@ const Home = () => {
         <div className="bg">
           <Projects />
           <Skills />
-          <RegistratonDetails />
+          {/*<RegistratonDetails />*/}
           <Colaborators />
           <Footer />
         </div>

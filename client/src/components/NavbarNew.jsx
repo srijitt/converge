@@ -30,7 +30,7 @@ const NavbarNew = () => {
     // <Router>
       <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
         <Container className="lg:mt-12 flex items-center justify-center">
-          <Navbar.Brand href="/home" className={scrolled ? "lg:mb-8" : ""}>
+          <Navbar.Brand href="/" className={scrolled ? "lg:mb-8" : ""}>
             <img src={logo} alt="Logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
@@ -81,7 +81,7 @@ const NavbarNew = () => {
               </Nav.Link>
 
               <Nav.Link
-                href="/"
+                href="/register"
                 target="_blank"
                 className={
                   activeLink === "register"

@@ -77,7 +77,7 @@ const Projects = () => {
                             return <ProjectCard key={index} {...project} />;
                           })}
                         </Row> */}
-                        <div class="tl-content" style={{ top: "10%" }}>
+                        <div className="tl-content" style={{ top: "10%" }}>
                           <p>
                             <FontAwesomeIcon icon={faClock} />{" "}
                             <span style={{ color: "white" }}>

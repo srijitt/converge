@@ -47,7 +47,7 @@ const Contact = () => {
               id="gmap"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13129.138825675716!2d88.42915905440138!3d22.57012860047784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275a90e2f3b89%3A0xd13b26d16803ab9b!2sIEM%2C%20Management%20House!5e0!3m2!1sen!2sin!4v1635278961661!5m2!1sen!2sin"
               style={{ border: 0 }}
-              allowfullscreen=""
+              allowFullScreen=""
               loading="lazy"
             ></iframe>
           </div>

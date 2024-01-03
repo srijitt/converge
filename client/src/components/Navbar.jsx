@@ -29,7 +29,7 @@ const NavbarNew = () => {
   return (
       <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
         <Container className="md:mt-12">
-          <Navbar.Brand href="/home" className="flex items-center justify-center">
+          <Navbar.Brand href="/" className="flex items-center justify-center">
             <img src={logo} alt="Logo" className=""/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
@@ -38,7 +38,7 @@ const NavbarNew = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link
-                href="/home"
+                href="/"
                 className={
                   activeLink === "home" ? "active navbar-link" : "navbar-link"
                 }

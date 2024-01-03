@@ -13,7 +13,7 @@ export const Footer = () => {
         <Row className="align-items-center">
           {/* <MailchimpForm /> */}
           <Contact className="mt-5" />
-          <Col className="mt-5" size={12} sm={6}>
+          <Col className="mt-5 logo-container" size={12} sm={6}>
             <img src={logo} alt="Logo" />
           </Col>
           <Col size={12} sm={6} className="text-center text-sm-end">
@@ -22,7 +22,7 @@ export const Footer = () => {
               <a href="#"><img src={navIcon2} alt="Icon" /></a>
               <a href="#"><img src={navIcon3} alt="Icon" /></a>
             </div> */}
-            <p>Copyright 2023. All Rights Reserved</p>
+            <p className="copyright">Copyright 2023. All Rights Reserved</p>
           </Col>
         </Row>
       </Container>
