@@ -14,35 +14,13 @@ export const UserSchema = new mongoose.Schema({
         required: [true, "Please provide a password"],
         unique: false,
     },
-    email: {
-        type: String,
-        required: [true, "Please provide a unique email"],
-        unique: true,
-    },
-    firstName: {
-        type: String
-    },
-    lastName: {
-        type: String
-    },
     fullname: {
         type: String, default: function () {
             const fullname = this.firstName + " " + this.lastName;
             return fullname;
         }
     },
-    mobile: {
-        type: Number
-    },
-    institute: {
-        type: String
-    },
-    profile: { type: String },
-    tid: { type: String },
-    points: { type: Number },
-    time: { type: String },
-    size: { type: String },
-    referredby: { type: String }
+    points: { type: Number }
 
 });
 

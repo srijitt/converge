@@ -3,14 +3,16 @@ import cors from 'cors';
 import morgan from 'morgan';
 import connect from './database/conn.js';
 import router from './router/route.js';
-import UserModel from './model/User.model.js';
-// import bodyParser from"body-parser"
+import UserSchema from './model/User.model.js';
+import mongoose from 'mongoose';
+import bodyParser from"body-parser"
 
 
 const app = express();
 
 /** middlewares */
 app.use(express.json());
+app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan('tiny'));
 app.disable('x-powered-by'); // less hackers know about our stack
@@ -23,78 +25,183 @@ app.get('/', (req, res) => {
     res.status(201).json("Home GET Request");
 });
 
+
+// get all user
 app.get('/getAllUsers', async (req, res) => {
     try {
-        const allUsers = await UserModel.find({});
-        res.send({ status: "ok", data: allUsers })
+        const users = await UserSchema.find({})
+        res.json(users)
     } catch (error) {
         console.log(error);
     }
 })
 
-app.post("/deleteUser", async (req, res) => {
-    const { userid } = req.body;
+// get one user by id
+app.get('/:id', async (req, res) => {
+    const {id} = req.params
+
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.json({error: "Invalid ID"})
+    }
+
+    const user = await UserSchema.findById(id)
+    if(!user) {
+        return res.json({error: "No such ID"});
+    }
+    res.json(user)
+})
+
+
+// post one user
+app.post('/addUser', async (req, res) => {
+    const { username, password, fullname, points } = req.body;
     try {
-        UserModel.deleteOne(
-            { _id: userid }, function (err) { console.log(err) }
-        )
-        res.send({ status: "ok", data: "Deleted" })
+        const newUser = new UserSchema({ username, password, fullname, points });
+        await newUser.save();
+        res.send({ status: "ok", data: newUser })
     } catch (error) {
         console.log(error);
     }
 })
 
-app.post("/incPointsby10", async (req, res) => {
-    const { userid, points } = req.body;
-    try {
-        let updatedPoints = points+10;
-        UserModel.findByIdAndUpdate(userid, { $set: { points: updatedPoints } }, function (err) { console.log(err) })
-        res.send({ status: "ok", data: "points increased" })
-    } catch (error) {
-        console.log(error)
+
+// delete one user by id
+app.delete("/:id", async (req, res) => {
+    const {id} = req.params
+
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({error: "Invalid ID"})
     }
-})
-app.post("/incPointsby20", async (req, res) => {
-    const { userid, points } = req.body;
-    try {
-        let updatedPoints = points + 20;
-        UserModel.findByIdAndUpdate(userid, { $set: { points: updatedPoints } }, function (err) { console.log(err) })
-        res.send({ status: "ok", data: "points increased by 20" })
-    } catch (error) {
-        console.log(error)
+
+    const del = await UserSchema.findOneAndDelete({_id: id})
+    if(!del) {
+        return res.status(404).json({error: "No such User"});
     }
+    res.send({ status: "ok", data: del })
 })
 
-app.post("/decPointsby10", async (req, res) => {
-    const { userid, points } = req.body;
-    try {
-        let updatedPoints = points-10;
-        UserModel.findByIdAndUpdate(userid, { $set: { points: updatedPoints } }, function (err) { console.log(err) })
-        res.send({ status: "ok", data: "points decreased" })
-    } catch (error) {
-        console.log(error)
+
+// increase points of user by 10
+app.post("/increase10/:id", async (req, res) => {
+    const { id } = req.params
+
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.json({error: "Invalid ID"})
     }
+
+    const user = await UserSchema.findById(id)
+    if(!user) {
+        return res.json({error: "No such ID"});
+    }
+
+    let points = user.points;
+
+    let updatedPoints = points + 10;
+    let upd = await UserSchema.findOneAndUpdate({_id: id}, { points: updatedPoints } )
+    res.send({ status: "ok", message:"updated points", data: upd })
 })
 
-app.post("/incPointsby50", async (req, res) => {
-    const { userid, points } = req.body;
-    try {
-        let updatedPoints = points+50;
-        UserModel.findByIdAndUpdate(userid, { $set: { points: updatedPoints } }, function (err) { console.log(err) })
-        res.send({ status: "ok", data: "points increased by 50" })
-    } catch (error) {
-        console.log(error)
+
+// increase points of user by 20
+app.post("/increase20/:id", async (req, res) => {
+    const { id } = req.params
+
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.json({error: "Invalid ID"})
     }
+
+    const user = await UserSchema.findById(id)
+    if(!user) {
+        return res.json({error: "No such ID"});
+    }
+
+    let points = user.points;
+
+    let updatedPoints = points + 20;
+    let upd = await UserSchema.findOneAndUpdate({_id: id}, { points: updatedPoints } )
+    res.send({ status: "ok", message:"updated points", data: upd })
 })
-app.post("/decPointsby50", async (req, res) => {
-    const { userid, points } = req.body;
-    try {
-        let updatedPoints = points-50;
-        UserModel.findByIdAndUpdate(userid, { $set: { points: updatedPoints } }, function (err) { console.log(err) })
-        res.send({ status: "ok", data: "points decreased by 50" })
-    } catch (error) {
-        console.log(error)
+
+
+// decrease points of user by 10
+app.post("/decrease10/:id", async (req, res) => {
+    const { id } = req.params
+
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.json({error: "Invalid ID"})
     }
+
+    const user = await UserSchema.findById(id)
+    if(!user) {
+        return res.json({error: "No such ID"});
+    }
+
+    let points = user.points;
+
+    let updatedPoints = points - 10;
+    let upd = await UserSchema.findOneAndUpdate({_id: id}, { points: updatedPoints } )
+    res.send({ status: "ok", message:"updated points", data: upd })
+})
+
+// decrease points of user by 20
+app.post("/decrease20/:id", async (req, res) => {
+    const { id } = req.params
+
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.json({error: "Invalid ID"})
+    }
+
+    const user = await UserSchema.findById(id)
+    if(!user) {
+        return res.json({error: "No such ID"});
+    }
+
+    let points = user.points;
+
+    let updatedPoints = points - 20;
+    let upd = await UserSchema.findOneAndUpdate({_id: id}, { points: updatedPoints } )
+    res.send({ status: "ok", message:"updated points", data: upd })
+})
+
+
+// increase points of user by 50
+app.post("/increase50/:id", async (req, res) => {
+    const { id } = req.params
+
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.json({error: "Invalid ID"})
+    }
+
+    const user = await UserSchema.findById(id)
+    if(!user) {
+        return res.json({error: "No such ID"});
+    }
+
+    let points = user.points;
+
+    let updatedPoints = points + 50;
+    let upd = await UserSchema.findOneAndUpdate({_id: id}, { points: updatedPoints } )
+    res.send({ status: "ok", message:"updated points", data: upd })
+})
+
+// decrease points of user by 50
+app.post("/decrease50/:id", async (req, res) => {
+    const { id } = req.params
+
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.json({error: "Invalid ID"})
+    }
+
+    const user = await UserSchema.findById(id)
+    if(!user) {
+        return res.json({error: "No such ID"});
+    }
+
+    let points = user.points;
+
+    let updatedPoints = points - 50;
+    let upd = await UserSchema.findOneAndUpdate({_id: id}, { points: updatedPoints } )
+    res.send({ status: "ok", message:"updated points", data: upd })
 })
 
 
