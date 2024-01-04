@@ -74,7 +74,7 @@ export default function Username() {
               <div className="text-center py-4">
                 <span className="text-gray-500">
                   Not a Member{" "}
-                  <Link className="" to="/register">
+                  <Link className="register-here" to="/register">
                     Register Now
                   </Link>
                 </span>
