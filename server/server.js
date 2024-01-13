@@ -18,7 +18,7 @@ app.use(morgan('tiny'));
 app.disable('x-powered-by'); // less hackers know about our stack
 
 
-const port = 8080;
+
 
 /** HTTP GET Request */
 app.get('/', (req, res) => {
@@ -205,6 +205,8 @@ app.post("/decrease50/:id", async (req, res) => {
 })
 
 
+const port = 8080;
+
 /** api routes */
 app.use('/api', router)
 
@@ -214,7 +216,7 @@ app.use('/api', router)
 connect().then(() => {
     try {
         app.listen(port, () => {
-            console.log(`Server connected to http://localhost:${port}`);
+            console.log(`Server listening on PORT${port}`);
         })
     } catch (error) {
         console.log('Cannot connect to the server')
