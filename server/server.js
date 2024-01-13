@@ -98,7 +98,7 @@ app.post("/increase10/:id", async (req, res) => {
 
     let updatedPoints = points + 10;
     let upd = await UserSchema.findOneAndUpdate({_id: id}, { points: updatedPoints } )
-    res.send({ status: "ok", message:"updated points", data: upd })
+    res.send({ status: "ok", message:`updated +10 points for ${user.username}`, data: upd })
 })
 
 
@@ -119,7 +119,7 @@ app.post("/increase20/:id", async (req, res) => {
 
     let updatedPoints = points + 20;
     let upd = await UserSchema.findOneAndUpdate({_id: id}, { points: updatedPoints } )
-    res.send({ status: "ok", message:"updated points", data: upd })
+    res.send({ status: "ok", message:`updated +20 points for ${user.username}`, data: upd })
 })
 
 
@@ -140,7 +140,7 @@ app.post("/decrease10/:id", async (req, res) => {
 
     let updatedPoints = points - 10;
     let upd = await UserSchema.findOneAndUpdate({_id: id}, { points: updatedPoints } )
-    res.send({ status: "ok", message:"updated points", data: upd })
+    res.send({ status: "ok", message:`updated -10 points for ${user.username}`, data: upd })
 })
 
 // decrease points of user by 20
@@ -160,7 +160,7 @@ app.post("/decrease20/:id", async (req, res) => {
 
     let updatedPoints = points - 20;
     let upd = await UserSchema.findOneAndUpdate({_id: id}, { points: updatedPoints } )
-    res.send({ status: "ok", message:"updated points", data: upd })
+    res.send({ status: "ok", message:`updated -20 points for ${user.username}`, data: upd })
 })
 
 
@@ -181,7 +181,7 @@ app.post("/increase50/:id", async (req, res) => {
 
     let updatedPoints = points + 50;
     let upd = await UserSchema.findOneAndUpdate({_id: id}, { points: updatedPoints } )
-    res.send({ status: "ok", message:"updated points", data: upd })
+    res.send({ status: "ok", message:`updated +50 points for ${user.username}`, data: upd })
 })
 
 // decrease points of user by 50
@@ -201,7 +201,7 @@ app.post("/decrease50/:id", async (req, res) => {
 
     let updatedPoints = points - 50;
     let upd = await UserSchema.findOneAndUpdate({_id: id}, { points: updatedPoints } )
-    res.send({ status: "ok", message:"updated points", data: upd })
+    res.send({ status: "ok", message:`updated -50 points for ${user.username}`, data: upd })
 })
 
 
@@ -216,7 +216,7 @@ app.use('/api', router)
 connect().then(() => {
     try {
         app.listen(port, () => {
-            console.log(`Server listening on PORT${port}`);
+            console.log(`Server listening on PORT: ${port}`);
         })
     } catch (error) {
         console.log('Cannot connect to the server')

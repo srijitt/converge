@@ -15,7 +15,7 @@ const Admin = () => {
 
   const serverURL = "https://elevate2k23.onrender.com";
   const localURL = "http://localhost:8080";
-  const URL = serverURL;
+  const URL = localURL;
 
   const getAllUser = () => {
     fetch(`${URL}/getAllUsers`, {
@@ -23,22 +23,9 @@ const Admin = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.data, "userData");
-        if (sortBy) setData(data.data.sort(compareName));
-        else {
-          setData(data.data.sort(compareDate));
-        }
+        console.log(data, "userData");
+        setData(data)
       });
-  };
-  const compareName = (a, b) => {
-    if (a.fullname.toLowerCase() < b.fullname.toLowerCase()) return -1;
-    if (a.fullname.toLowerCase() > b.fullname.toLowerCase()) return 1;
-    return 0;
-  };
-  const compareDate = (a, b) => {
-    if (Date(a.time) < Date(b.time)) return -1;
-    if (Date(a.time) > Date(b.time)) return 1;
-    return 0;
   };
 
   const deleteUser = (id, username) => {
@@ -63,6 +50,7 @@ const Admin = () => {
     } else {
     }
   };
+
   const incPoints = (id, username, points) => {
     // alert("points increased +10")
     if (
@@ -70,7 +58,7 @@ const Admin = () => {
         `Are you sure you want to increase ${username}'s points by 10`
       )
     ) {
-      fetch(`${URL}/incPointsby10`, {
+      fetch(`${URL}/increase10/${id}`, {
         method: "POST",
         crossDomain: true,
         headers: {
@@ -85,12 +73,13 @@ const Admin = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          alert(data.data);
+          alert(data.message);
           getAllUser();
         });
     } else {
     }
   };
+
   const incPoints20 = (id, username, points) => {
     // alert("points increased +10")
     if (
@@ -98,7 +87,7 @@ const Admin = () => {
         `Are you sure you want to increase ${username}'s points by 20`
       )
     ) {
-      fetch(`${URL}/incPointsby20`, {
+      fetch(`${URL}/increase20/${id}`, {
         method: "POST",
         crossDomain: true,
         headers: {
@@ -113,12 +102,13 @@ const Admin = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          alert(data.data);
+          alert(data.message);
           getAllUser();
         });
     } else {
     }
   };
+
   const incPoints50 = (id, username, points) => {
     // alert("points increased +10")
     if (
@@ -126,7 +116,7 @@ const Admin = () => {
         `Are you sure you want to increase ${username}'s points by 50`
       )
     ) {
-      fetch(`${URL}/incPointsby50`, {
+      fetch(`${URL}/increase50/${id}`, {
         method: "POST",
         crossDomain: true,
         headers: {
@@ -141,12 +131,14 @@ const Admin = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          alert(data.data);
+          alert(data.message);
           getAllUser();
         });
     } else {
     }
   };
+
+
   const decPoints = (id, username, points) => {
     // alert("points decreased -10")
     if (
@@ -154,7 +146,7 @@ const Admin = () => {
         `Are you sure you want to decrease ${username}'s points by 10`
       )
     ) {
-      fetch(`${URL}/decPointsby10`, {
+      fetch(`${URL}/decrease10/${id}`, {
         method: "POST",
         crossDomain: true,
         headers: {
@@ -169,12 +161,42 @@ const Admin = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          alert(data.data);
+          alert(data.message);
           getAllUser();
         });
     } else {
     }
   };
+
+  const decPoints20 = (id, username, points) => {
+    // alert("points decreased -10")
+    if (
+      window.confirm(
+        `Are you sure you want to decrease ${username}'s points by 20`
+      )
+    ) {
+      fetch(`${URL}/decrease20/${id}`, {
+        method: "POST",
+        crossDomain: true,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+        body: JSON.stringify({
+          userid: id,
+          points: points,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          alert(data.message);
+          getAllUser();
+        });
+    } else {
+    }
+  };
+
   const decPoints50 = (id, username, points) => {
     // alert("points decreased -10")
     if (
@@ -182,7 +204,7 @@ const Admin = () => {
         `Are you sure you want to decrease ${username}'s points by 50`
       )
     ) {
-      fetch(`${URL}/decPointsby50`, {
+      fetch(`${URL}/decrease50/${id}`, {
         method: "POST",
         crossDomain: true,
         headers: {
@@ -197,7 +219,7 @@ const Admin = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          alert(data.data);
+          alert(data.message);
           getAllUser();
         });
     } else {
@@ -209,33 +231,10 @@ const Admin = () => {
       <Navbar />
 
       <div className="mt-[70px] admin-container">
-        <h1 className="h1 text-center">Admin Panel</h1>
-        <div className="sortby flex justify-center align-items-center">
-          <h2> sort by: </h2>
-          <button
-            onClick={() => {
-              setSortBy(true);
-              getAllUser();
-            }}
-            className={styles.greenButton + " btn mx-1"}
-          >
-            Name
-          </button>
-          <button
-            onClick={() => {
-              setSortBy(false);
-              getAllUser();
-            }}
-            className={styles.greenButton + " btn mx-1"}
-          >
-            Date
-          </button>
-        </div>
-        <div className="note text-center">
-          *double click on the button to sort the data accordingly
-        </div>
-        <div className="text-center">
-          No. of Participants: {data.length - 2} + 2(demo)
+        <h1 className="h1 text-center font-bold">Admin Panel</h1>
+        
+        <div className="text-center text-lg my-8">
+          No. of Participants: {data.length}
         </div>
 
         {data?.map((i, index) => {
@@ -247,7 +246,6 @@ const Admin = () => {
                     {index + 1}. {i.username}
                   </p>
                   <p>{i.fullname}</p>
-                  <p>{i.time.slice(0, 16)}</p>
                 </div>
                 <div className="tid-col">
                   <p className="h3 short">{i.tid}</p>
@@ -278,6 +276,15 @@ const Admin = () => {
                       }}
                     >
                       +20
+                    </button>
+
+                    <button
+                      className={styles.greenButton + " btn mx-2"}
+                      onClick={() => {
+                        decPoints20(i._id, i.username, i.points);
+                      }}
+                    >
+                      -20
                     </button>
 
                     <button
@@ -317,19 +324,6 @@ const Admin = () => {
                       +50
                     </button>
 
-                    <button
-                      className={styles.greenButton + " btn mx-2"}
-                      onClick={() => {
-                        let x = document.getElementById("user" + index);
-                        if (x.style.display === "block")
-                          x.style.display = "none";
-                        else {
-                          x.style.display = "block";
-                        }
-                      }}
-                    >
-                      <FontAwesomeIcon icon={faChevronDown} />
-                    </button>
                   </div>
                 </div>
               </div>

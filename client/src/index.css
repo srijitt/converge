@@ -1158,11 +1158,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .admin-container {
-    padding: 0px 100px;
+    padding: 100px;
 }
 
 .admin-stats {
-    border: 2px solid #00ffcc;
+    border: 2px solid #ffea00;
     background-color: rgba(101, 101, 201, 0.1);
     border-radius: 10px;
     padding: 20px 20px;
@@ -1186,7 +1186,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 @media only screen and (max-width: 600px) {
     .admin-container {
-        padding: 0px;
+        padding: 20px;
     }
 
     .admin-stats {
