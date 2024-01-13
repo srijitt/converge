@@ -5,7 +5,7 @@ import connect from './database/conn.js';
 import router from './router/route.js';
 import UserSchema from './model/User.model.js';
 import mongoose from 'mongoose';
-import bodyParser from"body-parser"
+import bodyParser from"body-parser";
 
 
 const app = express();

@@ -52,14 +52,27 @@ export default function Username() {
                 />
                 <label htmlFor="username">Username</label>
               </div>
-              <button
-                className="btn btn-lg btn-primary btn-login fw-bold"
-                type="submit"
-              >
-                Next
-              </button>
 
-              {/* <div className="textbox flex flex-col items-center gap-6">
+              <div className="form-floating my-3">
+              <input
+                {...formik.getFieldProps("password")}
+                className="form-control password"
+                type="text"
+                placeholder="Password"
+              />
+              <label htmlFor="password">Password</label>
+              </div>
+
+
+
+          <button
+            className="btn btn-lg btn-primary btn-login fw-bold mt-4"
+            type="submit"
+          >
+            Login
+          </button>
+
+          {/* <div className="textbox flex flex-col items-center gap-6">
               <input
                 {...formik.getFieldProps("username")}
                 className={styles.textbox}
@@ -71,18 +84,19 @@ export default function Username() {
               </button>
             </div> */}
 
-              <div className="text-center py-4">
+          {/*<div className="text-center py-4">
                 <span className="text-gray-500">
                   Not a Member{" "}
                   <Link className="register-here" to="/register">
                     Register Now
                   </Link>
                 </span>
-              </div>
-            </form>
-          </div>
-        </div>
+          </div>*/}
+
+        </form>
       </div>
+    </div >
+      </div >
     </>
   );
 }
