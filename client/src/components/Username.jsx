@@ -1,17 +1,22 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import avatar from "../assets/profile.png";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { useFormik } from "formik";
 import { usernameValidate } from "../helper/validate";
 import { useAuthStore } from "../store/store";
 
 import styles from "../styles/Username.module.css";
 import Navbar from "./Navbar";
+import { AuthorizeUser } from "../middleware/auth";
 
 export default function Username() {
   const navigate = useNavigate();
   const setUsername = useAuthStore((state) => state.setUsername);
+
+  const serverURL = "https://elevate2k23.onrender.com";
+  const localURL = "http://localhost:8080";
+  const URL = localURL;
 
   const formik = useFormik({
     initialValues: {
@@ -26,6 +31,25 @@ export default function Username() {
     },
   });
 
+   const login = async (e) => {
+    e.preventDefault();
+    const response = await fetch(`${URL}/api/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formik.values),
+    });
+
+    const data = await response.json();
+
+    if (data.token) {
+      toast.success('Login Successful');
+      navigate("/profile");
+    } else {
+      toast.error('Login Failed')
+    }
+    console.log(data);
+   }
+
   return (
     <>
       <Navbar />
@@ -39,7 +63,7 @@ export default function Username() {
               <h4 className="text-5xl font-bold">Let's Converge</h4>
             </div>
 
-            <form className="py-1 " onSubmit={formik.handleSubmit}>
+            <form className="py-1 " onSubmit={login}>
               {/* <div className='profile flex justify-center py-4'>
                   <img src={avatar} className={styles.profile_img} alt="avatar" />
               </div> */}

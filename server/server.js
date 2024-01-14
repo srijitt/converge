@@ -6,6 +6,7 @@ import router from './router/route.js';
 import UserSchema from './model/User.model.js';
 import mongoose from 'mongoose';
 import bodyParser from"body-parser";
+import jwt from 'jsonwebtoken';
 
 
 const app = express();
@@ -63,6 +64,25 @@ app.post('/addUser', async (req, res) => {
         console.log(error);
     }
 })
+
+// login
+app.post('/api/login', async (req, res) => {
+    const user = await UserSchema.findOne({
+        username: req.body.username,
+        password: req.body.password
+    });
+
+    if (user) {
+
+        const token = jwt.sign(
+            { id: user._id }, 'jwtSecret');
+
+        
+        return res.json({status: "ok", user: true, token: token});
+    } else {
+        return res.json({status: "not found", user: false});
+    }
+});
 
 
 // delete one user by id
@@ -207,8 +227,8 @@ app.post("/decrease50/:id", async (req, res) => {
 
 const port = 8080;
 
-/** api routes */
-app.use('/api', router)
+{/* api routes 
+app.use('/api', router) */}
 
 // app.use(bodyParser({limit: '1mb'}));
 
