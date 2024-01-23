@@ -596,11 +596,31 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     border-radius: 10px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     #gmap {
         width: 85vw;
         height: 40vw;
     }
+
+    #row-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    ul .whatsapp {
+        display: flex;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .contact-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
 }
 
 .contacts {
@@ -627,18 +647,32 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .footer-link a {
-    color: #fff;
+    color: #0aff0e;
 }
+
+.footer-link .email-here {
+    color: #c2ff50;
+    font-style: italic;
+}
+
+.footer-link p {
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
 
 .footer-link .social-icon {
     /* border:2px solid red; */
     margin-left: 0;
+    display: flex;
+    gap: 10px;
+    margin: 14px;
 }
 
 /************ Projects Css ************/
 .contact {
     background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-    padding: 60px 0 200px 0;
+    padding: 6px 0 200px 0;
 }
 
 .contact img {
@@ -728,7 +762,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     width: 0;
     height: 100%;
     /* background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%); */
-    background: linear-gradient(90.21deg, #cdb900 -5.91%, #54bd23 111.58%);
+    background: linear-gradient(90.21deg, #cda100 -5.91%, #bd0000 111.58%);
     top: 0;
     left: 0;
     z-index: -2;
@@ -742,7 +776,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     width: 0;
     height: 100%;
     /* background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%); */
-    background: linear-gradient(90.21deg, #cdb900 -5.91%, #54bd23 111.58%);
+    background: linear-gradient(90.21deg, #bd0000 -5.91%, #cda100 111.58%);
     top: 0;
     left: 0;
     z-index: -2;
@@ -755,7 +789,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     width: 0;
     height: 100%;
     /* background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%); */
-    background: linear-gradient(90.21deg, #cdb900 -5.91%, #54bd23 111.58%);
+    background: linear-gradient(90.21deg, #cda100 -5.91%, #bd0000 111.58%);
     top: 0;
     left: 0;
     z-index: -2;
@@ -1205,6 +1239,45 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     .tid-col {
         padding-left: 0px;
     }
+}
+
+
+.points-container {
+    padding: 100px;
+}
+
+.points-stats {
+    width: 80vh;
+    border: 2px solid #ffea00;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    padding: 20px 20px;
+    color: #340000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+@media only screen and (max-width: 600px) {
+    .points-container {
+        padding: 20px;
+    }
+
+    .points-stats {
+        width: 50vh;
+        padding: 20px 0px;
+    }
+
+    .short {
+        font-size: 1rem;
+        margin-bottom: 0px;
+    }
+
+    .mobile {
+        display: inline;
+    }
+
 }
 
 .gif {

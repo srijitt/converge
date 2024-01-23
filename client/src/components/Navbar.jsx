@@ -44,16 +44,7 @@ const NavbarNew = () => {
                 }
                 onClick={() => onUpdateActiveLink("home")}
               >
-                Home
-              </Nav.Link>
-              <Nav.Link
-                href="/profile"
-                className={
-                  activeLink === "profile" ? "active navbar-link" : "navbar-link"
-                }
-                onClick={() => onUpdateActiveLink("profile")}
-              >
-                Profile
+                Back to Home
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

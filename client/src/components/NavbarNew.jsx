@@ -71,18 +71,17 @@ const NavbarNew = () => {
               </Nav.Link>
 
               <Nav.Link
-                href="#guests"
+                href="#collaborators"
                 className={
                   activeLink === "guests" ? "active navbar-link" : "navbar-link"
                 }
                 onClick={() => onUpdateActiveLink("guests")}
               >
-                Guests
+                Collaborators
               </Nav.Link>
 
               <Nav.Link
-                href="/register"
-                target="_blank"
+                href="/points"
                 className={
                   activeLink === "register"
                     ? "active navbar-link"
@@ -90,7 +89,7 @@ const NavbarNew = () => {
                 }
                 onClick={() => onUpdateActiveLink("register")}
               >
-                Login
+                Points Table
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

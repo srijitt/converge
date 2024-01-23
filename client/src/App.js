@@ -17,6 +17,7 @@ import Admin from './components/Admin'
 
 /** auth middleware */
 import { AuthorizeUser, ProtectRoute } from './middleware/auth'
+import PointsTable from './components/PointsTable';
 
 /** root routes */
 const router = createBrowserRouter([
@@ -25,8 +26,8 @@ const router = createBrowserRouter([
         element: <Home></Home>
     },
     {
-        path: '/register',
-        element: <Username></Username>
+        path: '/points',
+        element: <PointsTable></PointsTable>
     },
     {
         path: '/password',

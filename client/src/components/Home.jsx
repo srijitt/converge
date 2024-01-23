@@ -7,7 +7,7 @@ import { Skills } from "./Skills";
 import { Footer } from "./Footer";
 import "../styles/home.css";
 // import logo from '../images/logo.png'
-import vdo from "../assets/videos/converge 2024.mp4";
+import vdo from "../assets/videos/CONVERGE-TRAILER-FINAL-1.mp4";
 import Contact from "./Contact";
 import Colaborators from "./Colaborators";
 
@@ -32,7 +32,7 @@ const Home = () => {
         <Banner />
         <div className="bg">
           <Projects />
-          <Skills />
+          {/*<Skills />*/}
           {/*<RegistratonDetails />*/}
           <Colaborators />
           <Footer />

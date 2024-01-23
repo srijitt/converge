@@ -17,7 +17,7 @@ const Colaborators = () => {
             <div className="skill-bx wow zoomIn ">
               <h2>Collaborators</h2>
               {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p> */}
-              <div className="collab row flex align-items-center justify-content-center mt-3 ">
+              <div className="collab row flex align-items-center justify-content-center gap-10 mt-3 ">
                 <div className="col-md-2">
                   <img src={cslogo} alt="" />
                 </div>
@@ -28,19 +28,11 @@ const Colaborators = () => {
                   <img src={iemLogo} alt="" />
                 </div>
                 <div className="col-md-2">
-                  <img src={iiciem} alt="" />
-                </div>
-                <div className="col-md-2">
                   <img src={talyeah} alt="" />
                 </div>
               </div>
               <div className="collab row flex align-items-center justify-content-center mt-3 ">
-              <div className="col-md-2">
-                  <img src={wie} alt="" />
-                </div>
-                <div className="col-md-2">
-                  <img src={codingclub} alt="" />
-                </div>
+              
               </div>
             </div>
           </div>

@@ -7,34 +7,36 @@ const Contact = () => {
   return (
     <div className="">
       <div className="container contacts">
-        <div className="row">
+        <div className="row" id="row-footer">
           <div className="col-lg-1"></div>
           <div className="col-lg-2 col-sm-6">
             <div className="footer-link">
               <h3 className="footer-title h2">Contact Us</h3>
-              <ul>
+              <ul className="contact-details">
                 <li>
-                  <a href="mailto:ieeeiemsb@iem.edu.in">Email Here</a>
+                  <a href="mailto:ieeecsiem@iem.edu.in" className="text-center email-here">Email Here</a>
                 </li>
                 <li>
                   Whatsapp:
-                  <ul>
+                  <ul className="whatsapp">
                     <li><a href="https://wa.me/9073092005">Tiyash Mukherjee</a></li>
                     <li><a href="https://wa.me/9748122500">Ananya Banerjee</a></li>
                   </ul>
                 </li>
+                </ul>
+                <ul>
                 <li>
-                  <a href="#">Social Media</a>
+                  <p>Social Media</p>
                 </li>
                 <li>
-                <div className="social-icon" >
-                    <a href="https://www.linkedin.com/company/ieee-iemsb/">
+                <div className="social-icon flex gap-10" >
+                    <a href="https://www.linkedin.com/company/ieee-computer-society-iem/">
                       <img src={navIcon1} alt="Icon" />
                     </a>
-                    <a href="https://www.facebook.com/iemieee2k17">
+                    <a href="https://www.facebook.com/profile.php?id=61553446581446">
                       <img src={navIcon2} alt="Icon" />
                     </a>
-                    <a href="https://www.instagram.com/ieeeiemsb_official/">
+                    <a href="https://www.instagram.com/ieeecsiem_official/">
                       <img src={navIcon3} alt="Icon" />
                     </a>
                   </div>

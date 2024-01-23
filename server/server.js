@@ -224,6 +224,44 @@ app.post("/decrease50/:id", async (req, res) => {
     res.send({ status: "ok", message:`updated -50 points for ${user.username}`, data: upd })
 })
 
+app.post("/decrease15/:id", async (req, res) => {
+    const { id } = req.params
+
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.json({error: "Invalid ID"})
+    }
+
+    const user = await UserSchema.findById(id)
+    if(!user) {
+        return res.json({error: "No such ID"});
+    }
+
+    let points = user.points;
+
+    let updatedPoints = points - 15;
+    let upd = await UserSchema.findOneAndUpdate({_id: id}, { points: updatedPoints } )
+    res.send({ status: "ok", message:`updated -15 points for ${user.username}`, data: upd })
+})
+
+app.post("/increase15/:id", async (req, res) => {
+    const { id } = req.params
+
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.json({error: "Invalid ID"})
+    }
+
+    const user = await UserSchema.findById(id)
+    if(!user) {
+        return res.json({error: "No such ID"});
+    }
+
+    let points = user.points;
+
+    let updatedPoints = points + 15;
+    let upd = await UserSchema.findOneAndUpdate({_id: id}, { points: updatedPoints } )
+    res.send({ status: "ok", message:`updated +15 points for ${user.username}`, data: upd })
+})
+
 
 const port = 8080;
 
@@ -242,6 +280,6 @@ connect().then(() => {
         console.log('Cannot connect to the server')
     }
 }).catch(error => {
-    console.log("Invalid database connection...!");
+    console.log(error);
 })
 

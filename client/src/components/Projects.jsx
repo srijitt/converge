@@ -47,7 +47,7 @@ const Projects = () => {
                     isVisible ? "animate__animated animate__fadeIn" : ""
                   }
                 >
-                  <h2>Coming up</h2>
+                  <h2>Schedule</h2>
                   {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p> */}
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Nav
@@ -81,171 +81,109 @@ const Projects = () => {
                           <p>
                             <FontAwesomeIcon icon={faClock} />{" "}
                             <span style={{ color: "white" }}>
-                              04:30 PM - 05:30 PM
-                            </span>
+                              06:30 PM - 07:30 PM
+                            </span><br></br>
                             <span
                               style={{ paddingLeft: "20px", fontStyle: "bold" }}
                             >
-                              ELEVATE Inauguration
+                              Inauguration
                             </span>
                           </p>
 
                           <p>
                             <FontAwesomeIcon icon={faClock} />{" "}
                             <span style={{ color: "white" }}>
-                              5:30 PM - 6:00 PM
-                            </span>
+                              7:00 PM - 8:00 PM
+                            </span><br></br>
                             <span style={{ paddingLeft: "20px" }}>
-                              Orientation {"(Rules)"}
+                              Panel Discussion on "Navigating the Future of Technology in the World and in India"
                             </span>
                           </p>
+
+                          <p>
+                            <FontAwesomeIcon icon={faClock} />{" "}
+                            <span style={{ color: "white" }}>
+                              8:00 PM - 8:30 PM
+                            </span><br></br>
+                            <span style={{ paddingLeft: "20px" }}>
+                              Innovation Cup Results Announcement
+                            </span>
+                          </p>
+
                         </div>
                       </Tab.Pane>
+
                       <Tab.Pane eventKey="second">
                         <div style={{ top: "10%" }}>
                           <p>
                             <FontAwesomeIcon icon={faClock} />{" "}
                             <span style={{ color: "white" }}>
-                              10:00 AM - 10:15 AM
-                            </span>
+                              10:00 AM - 11:00 AM
+                            </span><br></br>
                             <span
                               style={{ paddingLeft: "20px", fontStyle: "bold" }}
                             >
-                              Day briefing
+                              Seminar - Sustainable Innovation of the Future ~ Dr. Sudeshna Choudhury
                             </span>
                           </p>
 
                           <p>
                             <FontAwesomeIcon icon={faClock} />{" "}
                             <span style={{ color: "white" }}>
-                              10:15 AM - 11:15 AM
-                            </span>
+                              11:30 AM - 02:00 PM
+                            </span><br></br>
                             <span style={{ paddingLeft: "20px" }}>
-                              Seminar - Sleeping on the roads to the Robot Man
-                              of Bengal: A bootstrapped journey of an
-                              entrepreneur ~ Arijit Hazra
+                              Parallel Workshop - 1. Meta Makers: Building the Future, Block by Block.<br></br>
+                              2. - Circuit Chasers: The Line is Your Finish Line
                             </span>
                           </p>
                           <p>
                             <FontAwesomeIcon icon={faClock} />{" "}
                             <span style={{ color: "white" }}>
-                              11:30 AM - 1:30 PM
-                            </span>
+                              02:00 PM - 03:00 PM
+                            </span><br></br>
                             <span style={{ paddingLeft: "20px" }}>
-                              Parallel Workshops - 3D Printing(Think again Lab)
-                              & Embedded Systems(Alumnus Software)
-                            </span>
-                          </p>
-                          {/* <ul>
-                            -Women entrepreneurship in the wake of economic
-                            liberalisation and globalisation.
-                          </ul> */}
-                          <p>
-                            <FontAwesomeIcon icon={faClock} />{" "}
-                            <span style={{ color: "white" }}>
-                              1:30 PM - 2:30 PM
-                            </span>
-                            <span style={{ paddingLeft: "40px" }}>
-                              Lunch break
-                            </span>
-                          </p>
-                          {/* <ul>
-                            -Geeks For Geeks <br />
-                            Speaker : Dr. Mousiki Kar
-                          </ul> */}
-                          <p>
-                            <FontAwesomeIcon icon={faClock} />{" "}
-                            <span style={{ color: "white" }}>
-                              3:00 PM - 4:00 PM
-                            </span>
-                            <span style={{ paddingLeft: "40px" }}>
-                              Panel Discussion - The necessity of
-                              Industry-Academia harmony
-                            </span>
-                          </p>
-                          <p>
-                            <FontAwesomeIcon icon={faClock} />{" "}
-                            <span style={{ color: "white" }}>
-                              4:30 PM - 6:00 PM
-                            </span>
-                            <span style={{ paddingLeft: "40px" }}>
-                              Competition - PPT Presentation competition (WiE
-                              Kolkata Section)
+                              Competition - The Escape Rooms (Experience mind-boggling questions and win our version of escape room games)
                             </span>
                           </p>
                         </div>
                       </Tab.Pane>
+
                       <Tab.Pane eventKey="third">
                         <div style={{ top: "10%" }}>
                           <p>
                             <FontAwesomeIcon icon={faClock} />{" "}
                             <span style={{ color: "white" }}>
-                              10:00 AM - 10:15 AM
+                              10:00 AM - 11:00 AM
                             </span>
+                            <br></br>
                             <span
                               style={{ paddingLeft: "20px", fontStyle: "bold" }}
                             >
-                              Day briefing
+                              Almuni Talk ~ Bridge the gap between academia and professional success.
                             </span>
                           </p>
 
                           <p>
                             <FontAwesomeIcon icon={faClock} />{" "}
                             <span style={{ color: "white" }}>
-                              10:15 AM - 12:15 AM
-                            </span>
+                              11:30 AM - 03:30 PM
+                            </span><br></br>
                             <span style={{ paddingLeft: "20px" }}>
-                              Parallel Workshops - Internet of Things(Think
-                              Again Lab) & Flutter Development(IEM Coding Club)
+                              The Grand Techno Carnival ~ Rack up points during the carnival, by playing games and participating in events
                             </span>
                           </p>
+
                           <p>
                             <FontAwesomeIcon icon={faClock} />{" "}
                             <span style={{ color: "white" }}>
-                              12:30 PM - 1:30 PM
-                            </span>
+                              03:30 PM - 05:00 PM
+                            </span><br></br>
                             <span style={{ paddingLeft: "20px" }}>
-                              Competition - Project Presentation Competition
+                            The Tech Treasure Trove Auction - Place your bids using the points you've accumulated throghout the events and win prizes.
                             </span>
                           </p>
-                          <p>
-                            <FontAwesomeIcon icon={faClock} />{" "}
-                            <span style={{ color: "white" }}>
-                              1:30 PM - 2:30 PM
-                            </span>
-                            <span style={{ paddingLeft: "40px" }}>
-                              Lunch break
-                            </span>
-                          </p>
-                          <p>
-                            <FontAwesomeIcon icon={faClock} />{" "}
-                            <span style={{ color: "white" }}>
-                              2:30 PM - 3:30 PM
-                            </span>
-                            <span style={{ paddingLeft: "40px" }}>
-                              Seminar - AI Lens: Data driven Artificial
-                              Inteligence ~ Shivam Avilash
-                            </span>
-                          </p>
-                          <p>
-                            <FontAwesomeIcon icon={faClock} />{" "}
-                            <span style={{ color: "white" }}>
-                              3:30 PM - 5:00 PM
-                            </span>
-                            <span style={{ paddingLeft: "40px" }}>
-                              Competition - Ideathon
-                            </span>
-                          </p>
-                          <p>
-                            <FontAwesomeIcon icon={faClock} />{" "}
-                            <span style={{ color: "white" }}>
-                              5:00 PM - 6:00 PM
-                            </span>
-                            <span style={{ paddingLeft: "40px" }}>
-                              Seminar - Building a personal brand through social
-                              media ~ Indrajit Lahiri
-                            </span>
-                          </p>
+
                         </div>
                       </Tab.Pane>
                     </Tab.Content>
