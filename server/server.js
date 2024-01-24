@@ -274,7 +274,7 @@ app.use('/api', router) */}
 connect().then(() => {
     try {
         app.listen(port, () => {
-            console.log(`Server listening on PORT: ${port}`);
+            console.log(`Server listening`);
         })
     } catch (error) {
         console.log('Cannot connect to the server')
