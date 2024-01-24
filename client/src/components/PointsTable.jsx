@@ -51,7 +51,7 @@ const PointsTable = () => {
             value &&
             user &&
             user.fullname &&
-            user.fullname.toLowerCase().includes(value)
+            user.fullname.toLowerCase().includes(value.toLowerCase())
           );
         });
         if(value === '')
