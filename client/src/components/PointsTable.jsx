@@ -20,9 +20,9 @@ const PointsTable = () => {
     // sortUserData();
   }, []);
 
-  const serverURL = "https://elevate2k23.onrender.com";
+  const serverURL = "https://converge-api.onrender.com";
   const localURL = "http://localhost:8080";
-  const URL = localURL;
+  const URL = serverURL;
 
   const compareName = (a, b) => {
     if (a.fullname.toLowerCase() < b.fullname.toLowerCase()) return -1;
