@@ -1,21 +1,29 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Admin.module.css";
 import Navbar from "./Navbar";
-
+import { IoIosSearch } from "react-icons/io";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const Admin = () => {
   const [data, setData] = useState([]);
-  const [sortBy, setSortBy] = useState(true);
+
+
   useEffect(() => {
     getAllUser();
+    
     // sortUserData();
   }, []);
 
   const serverURL = "https://elevate2k23.onrender.com";
   const localURL = "http://localhost:8080";
   const URL = localURL;
+
+  const compareName = (a, b) => {
+    if (a.fullname.toLowerCase() < b.fullname.toLowerCase()) return -1;
+    if (a.fullname.toLowerCase() > b.fullname.toLowerCase()) return 1;
+    return 0;
+  };
 
   const getAllUser = () => {
     fetch(`${URL}/getAllUsers`, {
@@ -24,7 +32,7 @@ const Admin = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data, "userData");
-        setData(data)
+        setData(data.sort(compareName));
       });
   };
 
@@ -284,6 +292,27 @@ const Admin = () => {
     }
   };
 
+  const fetchData = (value) => {
+    fetch(`${URL}/getAllUsers`)
+      .then((response) => response.json())
+      .then((json) => {
+        const results = json.filter((user) => {
+          return (
+            value &&
+            user &&
+            user.fullname &&
+            user.fullname.toLowerCase().includes(value)
+          );
+        });
+        if(value === '')
+         setData(data);
+        else
+          setData(results);
+        
+      });
+  };
+
+  
 
   // var sorteddata = data?.sort() || "";
   return (
@@ -291,10 +320,15 @@ const Admin = () => {
       <Navbar />
 
       <div className="mt-[70px] admin-container">
+
+      <div className="flex flex-col items-center justify-center">
         <h1 className="h1 text-center font-bold">Admin Panel</h1>
         
         <div className="text-center text-lg my-8">
           No. of Participants: {data.length}
+        </div>
+
+        
         </div>
 
         {data?.map((i, index) => {
@@ -303,9 +337,9 @@ const Admin = () => {
               <div className="admin-stats">
                 <div className="username-col">
                   <p className="h3 short">
-                    {index + 1}. {i.username}
+                    {index + 1}. {i.fullname}
                   </p>
-                  <p>{i.fullname}</p>
+                  <p>{i.username}</p>
                 </div>
                 <div className="tid-col">
                   <p className="h3 short">{i.tid}</p>

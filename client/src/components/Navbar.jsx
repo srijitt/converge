@@ -27,7 +27,7 @@ const NavbarNew = () => {
   };
 
   return (
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+      <Navbar id="points" expand="md" className={scrolled ? "scrolled" : ""}>
         <Container className="md:mt-12">
           <Navbar.Brand href="/" className="flex items-center justify-center">
             <img src={logo} alt="Logo" className=""/>

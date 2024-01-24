@@ -1286,3 +1286,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     margin: auto;
     margin-top: 50px;
 }
+
+.points {
+    background-color: #340000;
+}
+
+#points {
+    background-color: #340000;
+}

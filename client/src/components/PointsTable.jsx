@@ -6,10 +6,15 @@ import logo from "../assets/img/logo.png";
 import { Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { IoIosSearch } from "react-icons/io";
 
 const PointsTable = () => {
   const [data, setData] = useState([]);
   const [sortBy, setSortBy] = useState(true);
+  const [input, setInput] = useState("");
+
+  
+
   useEffect(() => {
     getAllUser();
     // sortUserData();
@@ -19,6 +24,13 @@ const PointsTable = () => {
   const localURL = "http://localhost:8080";
   const URL = localURL;
 
+  const compareName = (a, b) => {
+    if (a.fullname.toLowerCase() < b.fullname.toLowerCase()) return -1;
+    if (a.fullname.toLowerCase() > b.fullname.toLowerCase()) return 1;
+    return 0;
+  };
+
+
   const getAllUser = () => {
     fetch(`${URL}/getAllUsers`, {
       method: "GET",
@@ -26,8 +38,33 @@ const PointsTable = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data, "userData");
-        setData(data)
+        setData(data.sort(compareName))
       });
+  };
+
+  const fetchData = (value) => {
+    fetch(`${URL}/getAllUsers`)
+      .then((response) => response.json())
+      .then((json) => {
+        const results = json.filter((user) => {
+          return (
+            value &&
+            user &&
+            user.fullname &&
+            user.fullname.toLowerCase().includes(value)
+          );
+        });
+        if(value === '')
+         setData(data.sort(compareName));
+        else
+          setData(results.sort(compareName));
+        
+      });
+  };
+
+  const handleChange = (value) => {
+    setInput(value);
+    fetchData(value);
   };
 
   // var sorteddata = data?.sort() || "";
@@ -36,7 +73,16 @@ const PointsTable = () => {
       <Navbar />
 
       <div className="mt-[70px] points-container">
+
+        <div className="flex flex-col items-center justify-center">
         <h1 className="h1 text-center mb-14 font-bold">Points Table</h1>
+        
+        <div className=" bg-white w-fit md:w-[400px] lg:w-[600px] px-4 py-3 mb-14 flex justify-center items-center rounded-full shadow-sm shadow-yellow-300">
+        <IoIosSearch className="text-yellow-500" size={30}/>
+        <input type="text" className="px-4 bg-transparent py-1 w-full rounded-md border-none focus:outline-none text-red" placeholder="Search by name" value={input}
+        onChange={(e) => handleChange(e.target.value)}/>
+        </div>
+        </div>
         
 
         <div className="flex my-8 flex-col justify-center items-center">
@@ -46,15 +92,11 @@ const PointsTable = () => {
               <div className="points-stats">
                 <div className="username-col">
                   <p className="h3 short">
-                    - {i.username}
+                    {i.fullname}
                   </p>
-                  <p>{i.fullname}</p>
+                  {/*<p>{i.username}</p>*/}
                 </div>
-                <div className="tid-col">
-                  <p className="h3 short">{i.tid}</p>
-                  <p>{i.email}</p>
-                  <p>{i.mobile}</p>
-                </div>
+    
                 <div>
                   <p className="h1 short">
                     <span className="mobile">Points: </span>

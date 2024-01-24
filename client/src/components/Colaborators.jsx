@@ -10,7 +10,7 @@ import wie from "../assets/img/collaborators/wielogo.jpg"
 
 const Colaborators = () => {
   return (
-    <section className="skill" id="guests">
+    <section className="skill" id="collaborators">
       <div className="container">
         <div className="row">
           <div className="col-12">
