@@ -71,6 +71,7 @@ const Projects = () => {
                         isVisible ? "animate__animated animate__slideInUp" : ""
                       }
                     >
+                      {/* 26th Jan */}
                       <Tab.Pane eventKey="first">
                         {/* <Row>
                           {projects.map((project, index) => {
@@ -113,6 +114,7 @@ const Projects = () => {
                         </div>
                       </Tab.Pane>
 
+                      {/* 27th Jan */}
                       <Tab.Pane eventKey="second">
                         <div style={{ top: "10%" }}>
                           <p>
@@ -157,7 +159,8 @@ const Projects = () => {
                           </p>
                         </div>
                       </Tab.Pane>
-
+                      
+                      {/* 28th Jan */}
                       <Tab.Pane eventKey="third">
                         <div style={{ top: "10%" }}>
                           <p>
