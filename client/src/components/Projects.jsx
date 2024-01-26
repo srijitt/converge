@@ -143,6 +143,15 @@ const Projects = () => {
                               02:00 PM - 03:00 PM
                             </span><br></br>
                             <span style={{ paddingLeft: "20px" }}>
+                              Lunch Break
+                            </span>
+                          </p>
+                          <p>
+                            <FontAwesomeIcon icon={faClock} />{" "}
+                            <span style={{ color: "white" }}>
+                              03:00 PM - 04:30 PM
+                            </span><br></br>
+                            <span style={{ paddingLeft: "20px" }}>
                               Competition - The Escape Rooms (Experience mind-boggling questions and win our version of escape room games)
                             </span>
                           </p>
