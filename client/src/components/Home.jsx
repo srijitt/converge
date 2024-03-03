@@ -1,14 +1,11 @@
 import React from "react";
 import Banner from "./Banner";
 import Projects from "./Projects";
-import NavbarNew from "./NavbarNew"
-import RegistratonDetails from "./RegistratonDetails";
-import { Skills } from "./Skills";
+import NavbarNew from "./NavbarNew";
 import { Footer } from "./Footer";
 import "../styles/home.css";
 // import logo from '../images/logo.png'
 import vdo from "../assets/videos/CONVERGE-TRAILER-FINAL-1.mp4";
-import Contact from "./Contact";
 import Colaborators from "./Colaborators";
 
 const Home = () => {
@@ -33,7 +30,6 @@ const Home = () => {
         <div className="bg">
           <Projects />
           {/*<Skills />*/}
-          {/*<RegistratonDetails />*/}
           <Colaborators />
           <Footer />
         </div>

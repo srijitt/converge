@@ -3,21 +3,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 
 /** import all components */
-import Username from './components/Username';
-import Password from './components/Password';
-import Register from './components/Register';
-import Profile from './components/Profile';
-import Recovery from './components/Recovery';
-import Reset from './components/Reset';
 import PageNotFound from './components/PageNotFound';
-import NavbarNew from './components/NavbarNew';
 import Home from './components/Home'
 import Admin from './components/Admin'
-
-
-/** auth middleware */
-import { AuthorizeUser, ProtectRoute } from './middleware/auth'
 import PointsTable from './components/PointsTable';
+
 
 /** root routes */
 const router = createBrowserRouter([
@@ -28,22 +18,6 @@ const router = createBrowserRouter([
     {
         path: '/points',
         element: <PointsTable></PointsTable>
-    },
-    {
-        path: '/password',
-        element: <ProtectRoute><Password /></ProtectRoute>
-    },
-    {
-        path: '/profile',
-        element: <AuthorizeUser><Profile /></AuthorizeUser>
-    },
-    {
-        path: '/recovery',
-        element: <Recovery></Recovery>
-    },
-    {
-        path: '/reset',
-        element: <Reset></Reset>
     },
     {
         path: '/Ob1qe2t10q27520wGcv9MI7d1Moju5RG',
